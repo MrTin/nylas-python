@@ -107,7 +107,7 @@ Please refer to [Contributing](Contributing.md) for information about how to mak
 
 It can sometimes be helpful to turn on request logging during development. Adding the following snippet to your code that calls the SDK should get you sorted:
 
-```
+```python
 import logging
 import requests
 
@@ -117,6 +117,55 @@ requests_log = logging.getLogger("requests.packages.urllib3")
 requests_log.setLevel(logging.DEBUG)
 requests_log.propagate = True
 ```
+
+## 🛠️ Development
+
+### Setup Development Environment
+
+1. Create and activate a virtual environment:
+
+```bash
+# Create a virtual environment
+python -m venv .nylas-env
+
+# Activate it (choose based on your OS)
+
+source .nylas-env/bin/activate  # On Unix/macOS
+.\.nylas-env\Scripts\activate   # On Windows
+```
+
+2. Install the package in development mode with all dependencies:
+
+`pip install -e ".[test,docs,release]"`
+
+### Running Tests and Tools
+
+```bash
+# Run the full test suite
+python setup.py test
+
+# Run specific tests
+
+pytest tests/path/to/test_file.py
+
+# Run linting
+
+pylint nylas
+
+# Run code formatting
+
+black .
+
+# Generate documentation
+
+python setup.py build-docs
+```
+
+### Deactivate Virtual Environment
+
+When you're done developing, you can deactivate the virtual environment:
+
+`deactivate`
 
 ## 📝 License
 
