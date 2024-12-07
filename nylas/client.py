@@ -5,14 +5,15 @@ from nylas.resources.attachments import Attachments
 from nylas.resources.auth import Auth
 from nylas.resources.calendars import Calendars
 from nylas.resources.connectors import Connectors
-from nylas.resources.events import Events
-from nylas.resources.folders import Folders
-from nylas.resources.messages import Messages
-from nylas.resources.threads import Threads
-from nylas.resources.webhooks import Webhooks
 from nylas.resources.contacts import Contacts
 from nylas.resources.drafts import Drafts
+from nylas.resources.events import Events
+from nylas.resources.folders import Folders
 from nylas.resources.grants import Grants
+from nylas.resources.messages import Messages
+from nylas.resources.room_resources import RoomResources
+from nylas.resources.threads import Threads
+from nylas.resources.webhooks import Webhooks
 
 
 class Client:
@@ -169,3 +170,13 @@ class Client:
             The Webhooks API.
         """
         return Webhooks(self.http_client)
+
+    @property
+    def room_resources(self) -> RoomResources:
+        """
+        Access the Room Resources API.
+
+        Returns:
+            The Room Resources API.
+        """
+        return RoomResources(self.http_client)
