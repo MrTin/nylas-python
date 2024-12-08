@@ -12,24 +12,24 @@ class RoomResource:
     Class representation of a Nylas Room Resource object.
 
     Attributes:
+        name: The name of the room resource.
+        email: The email address associated with the room resource.
         building: The name of the building where the room is located.
         capacity: The number of people the room can seat.
-        email: The email address associated with the room resource.
         floor_name: The name of the floor where the room is located.
         floor_number: The floor number where the room is located.
         floor_section: The section of the floor where the room is located.
-        grant_id: The ID of grant for the connected user.
         object: The object type (always "room_resource").
     """
 
+    name: str
     email: str
-    # grant_id: Optional[str] = None
-    object: str
     building: Optional[str] = None
     capacity: Optional[int] = None
     floor_name: Optional[str] = None
     floor_number: Optional[int] = None
     floor_section: Optional[str] = None
+    object: str
 
 
 class ListRoomResourcesQueryParams(TypedDict):
