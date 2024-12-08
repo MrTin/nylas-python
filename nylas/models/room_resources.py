@@ -22,6 +22,7 @@ class RoomResource:
         object: The object type (always "room_resource").
     """
 
+    object: str = "room_resource"
     name: str
     email: str
     building: Optional[str] = None
@@ -29,7 +30,6 @@ class RoomResource:
     floor_name: Optional[str] = None
     floor_number: Optional[int] = None
     floor_section: Optional[str] = None
-    object: str
 
 
 class ListRoomResourcesQueryParams(TypedDict):
