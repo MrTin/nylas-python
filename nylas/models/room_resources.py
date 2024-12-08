@@ -18,10 +18,12 @@ class RoomResource:
         floor_name: The name of the floor where the room is located.
         floor_number: The floor number where the room is located.
         floor_section: The section of the floor where the room is located.
+        grant_id: The ID of grant for the connected user.
         object: The object type (always "room_resource").
     """
 
     email: str
+    grant_id: Optional[str] = None
     object: str
     building: Optional[str] = None
     capacity: Optional[int] = None
