@@ -22,9 +22,9 @@ class RoomResource:
         object: The object type (always "room_resource").
     """
 
-    object: str = "room_resource"
     name: str
     email: str
+    object: str = "room_resource"
     building: Optional[str] = None
     capacity: Optional[int] = None
     floor_name: Optional[str] = None
