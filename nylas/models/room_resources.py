@@ -23,7 +23,7 @@ class RoomResource:
     """
 
     email: str
-    grant_id: Optional[str] = None
+    # grant_id: Optional[str] = None
     object: str
     building: Optional[str] = None
     capacity: Optional[int] = None
